@@ -13,24 +13,23 @@ const cartSlice = createSlice({
         },
         addItem(state, action) {
             const product = action.payload;
-            // console.log("state.products", product);
             const item = state.products.find(item => item.id === product.id)
             if (item) {
-                item.quantity = item.quantity + 1
+                item.quantity++;
             } else {
                 state.products.push({ ...product, quantity: 1 })
-                state.total++
+                state.total++;
             }
         },
         removeItem(state, action) {
             const product = action.payload;
             const item = state.products.find(item => item.id === product.id)
-            if (item && item.quantity > 1) {
-                item.quantity = item.quantity - 1
-            } else if (item.quantity === 1) {
-                item.quantity--;
+            if (item.quantity === 1) {
                 state.products = state.products.filter(item => item.id !== product.id)
                 state.total--
+            } else {
+                item.quantity--;
+
             }
 
         }
@@ -39,4 +38,4 @@ const cartSlice = createSlice({
 })
 
 export default cartSlice.reducer;
-export const cartActions = cartSlice.actions; //עכשיו האקשן נוצר עבורנו
+export const cartActions = cartSlice.actions; 
