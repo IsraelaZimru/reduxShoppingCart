@@ -55,7 +55,7 @@ export const getCartItems = () => {
 
             const responseData = await response.json();
 
-            if (responseData.products.length) {
+            if (responseData.products?.length) {
                 dispatch(cartActions.getCartFromDB(responseData))
             }
         } catch (err) {

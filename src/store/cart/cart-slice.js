@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 
 const initialState = {
-    total: 0, products: []
+    total: 0, products: [], changed: false
 }
 
 const cartSlice = createSlice({
@@ -17,6 +17,7 @@ const cartSlice = createSlice({
             const product = action.payload;
             const item = state.products.find(item => item.id === product.id)
             state.total++;
+            state.changed = true;
             if (item) {
                 item.quantity++;
             } else {
@@ -27,6 +28,7 @@ const cartSlice = createSlice({
             const product = action.payload;
             const item = state.products.find(item => item.id === product.id)
             state.total--;
+            state.changed = true;
             if (item.quantity === 1) {
                 state.products = state.products.filter(item => item.id !== product.id)
             } else {
