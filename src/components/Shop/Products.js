@@ -1,6 +1,6 @@
 import ProductItem from './ProductItem';
 import classes from './Products.module.css';
-import products from '../../data.json';
+import products from '../../fake_data.json';
 
 const Products = (props) => {
   return (

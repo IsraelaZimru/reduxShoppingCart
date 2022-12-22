@@ -14,19 +14,19 @@ const cartSlice = createSlice({
         addItem(state, action) {
             const product = action.payload;
             const item = state.products.find(item => item.id === product.id)
+            state.total++;
             if (item) {
                 item.quantity++;
             } else {
                 state.products.push({ ...product, quantity: 1 })
-                state.total++;
             }
         },
         removeItem(state, action) {
             const product = action.payload;
             const item = state.products.find(item => item.id === product.id)
+            state.total--;
             if (item.quantity === 1) {
                 state.products = state.products.filter(item => item.id !== product.id)
-                state.total--
             } else {
                 item.quantity--;
 
