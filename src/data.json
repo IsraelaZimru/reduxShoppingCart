@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "title": "milk",
+    "price": 5.9,
+    "quantity": 0,
+    "description": "Delicious and fresh milk from the barn"
+  },
+  {
+    "id": 2,
+    "title": "cake",
+    "price": 30,
+    "quantity": 0,
+    "description": "A quality and affordable chocolate cake"
+  },
+  {
+    "id": 3,
+    "title": "vanilla ice cream",
+    "price": 10,
+    "quantity": 0,
+    "description": "French vanilla ice cream and chocolate chips"
+  },
+  {
+    "id": 4,
+    "title": "caramel ice cream",
+    "price": 10,
+    "quantity": 0,
+    "description": "Festive salted caramel ice cream"
+  }
+]
