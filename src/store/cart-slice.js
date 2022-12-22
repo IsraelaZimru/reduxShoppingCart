@@ -1,16 +1,13 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-    show: true, total: 0, products: []
+    total: 0, products: []
 }
 
 const cartSlice = createSlice({
     name: "cart",
     initialState,
     reducers: {
-        toggleShowCart(state) {
-            state.show = !state.show
-        },
         addItem(state, action) {
             const product = action.payload;
             const item = state.products.find(item => item.id === product.id)
